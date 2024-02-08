@@ -1,7 +1,7 @@
 import pygame
 from graphs import Graphe
 
-def CreePlateau():
+def creePlateau():
 	g = Graphe(8)
 	g.ajouterArc(0,1)
 	g.ajouterArc(0,2)
@@ -16,20 +16,20 @@ def CreePlateau():
 	g.ajouterArc(5,7)
 	g.ajouterArc(6,7)
 	g.ajouterPos()
-	#g.setColor(2,"blue")	
+	#g.setColor(2,"blue")
 	print(g.color)
 	return g
 
-def AffichePlateau(fenetre, g, joueur, chaine):
+def affichePlateau(fenetre, g, joueur, chaine):
 	for i in range(len(g.adj)):
 		for j in range(len(g.adj[0])):
 			if g.getArc(i,j):
 				pygame.draw.lines(fenetre, "white", True, [g.pos[i],g.pos[j]], 1)
-				
+
 	for i in range(len(g.color)):
-		pygame.draw.circle(fenetre, g.color[i], g.pos[i], 20) 
-		
-	
+		pygame.draw.circle(fenetre, g.color[i], g.pos[i], 20)
+
+
 	font = pygame.font.SysFont("broadway",24,bold=False,italic=False)
 	if joueur == "red":
 		c = (255,255,0)
@@ -38,9 +38,9 @@ def AffichePlateau(fenetre, g, joueur, chaine):
 		c= (255, 0, 0)
 		text=font.render(chaine,1,c)
 	fenetre.blit(text,(30,30))
-	
+
 	pygame.display.flip()
-	
+
 """
 	   ### x , y
 	pygame.draw.circle(fenetre, "white", (600,100), 20)
@@ -50,12 +50,6 @@ def AffichePlateau(fenetre, g, joueur, chaine):
 	pygame.draw.circle(fenetre, "white", (500,400), 20)
 	pygame.draw.circle(fenetre, "white", (200,500), 20)
 	pygame.draw.circle(fenetre, "white", (600,500), 20)
-	
-	pygame.draw.circle(fenetre, g.color[2], g.pos[2], 20) 
-"""	
-	
 
-
-
-
-	
+	pygame.draw.circle(fenetre, g.color[2], g.pos[2], 20)
+"""

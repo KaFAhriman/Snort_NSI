@@ -7,7 +7,7 @@ def selectionSommet(x, y ,g, joueur):
 			et -1 sinon
 	"""
 	print("a completer")
-			
+
 def sommetValide(i, g,  joueur):
 	"""
 		Entrée: le numéro du sommet, le graphe , le joueur (sa couleur)
@@ -15,18 +15,14 @@ def sommetValide(i, g,  joueur):
 			sinon, colorie le sommet et renvoie True
 	"""
 	print("a completer")
-	
+
 def testGagne(g, joueur):
-	""" 
+	"""
 		Entrée: le graph , le joueur (sa couleur)
-		
-		vérifie pour tous les sommets que 
+
+		vérifie pour tous les sommets que
 			si le sommet est blanc alors il n'y a pas de voisins de la couleur de joueur,
 			sinon ce sommet n'est pas jouable
 		renvoie True si il reste un sommet jouable pour joueur, et False sinon
 	"""
 	print("a completer")
-		
-			
-			
-
