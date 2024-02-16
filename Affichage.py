@@ -1,5 +1,5 @@
 import pygame
-from graphs import Graphe
+from Graphe import Graphe
 
 def creePlateau():
 	g = Graphe(8)
@@ -15,9 +15,6 @@ def creePlateau():
 	g.ajouterArc(4,6)
 	g.ajouterArc(5,7)
 	g.ajouterArc(6,7)
-	g.ajouterPos()
-	#g.setColor(2,"blue")
-	print(g.color)
 	return g
 
 def affichePlateau(fenetre, g, joueur, chaine):
@@ -40,16 +37,3 @@ def affichePlateau(fenetre, g, joueur, chaine):
 	fenetre.blit(text,(30,30))
 
 	pygame.display.flip()
-
-"""
-	   ### x , y
-	pygame.draw.circle(fenetre, "white", (600,100), 20)
-	pygame.draw.circle(fenetre, "white", (300,200), 20)
-	pygame.draw.circle(fenetre, "white", (500,200), 20)
-	pygame.draw.circle(fenetre, "white", (300,400), 20)
-	pygame.draw.circle(fenetre, "white", (500,400), 20)
-	pygame.draw.circle(fenetre, "white", (200,500), 20)
-	pygame.draw.circle(fenetre, "white", (600,500), 20)
-
-	pygame.draw.circle(fenetre, g.color[2], g.pos[2], 20)
-"""

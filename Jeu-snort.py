@@ -10,13 +10,11 @@ import traceback
 	lance l'écouteur d'événement.
 """
 
-
-
 pygame.init()
 #
 # Le rectangle est repéré en haut à gauche
 fenetre= pygame.display.set_mode((800,600))
-fenetre.fill((0,0,0))
+fenetre.fill((102, 101, 67))
 chaine = "Au suivant"
 joueur = "red"
 g = creePlateau()
@@ -34,23 +32,27 @@ while continuer:
 		elif event.type == MOUSEBUTTONDOWN:
 			(x,y) = event.pos
 			#print(x,y)
-			sommet = selectionSommet(x, y , g, joueur)
-
-			if(sommetValide(sommet, g, joueur)):
-				print("Sommet valide ok")
-			else:
-				print("Sommet pas ok")
-				print(joueur, "ne peux pas jouer là")
+			s = selectionSommet(x, y, g, joueur)
+			if s == -1:
 				break
+			else:
+				peut = True
+				for i in range(8):
+					if g.adj[s][i] == True :
+						if g.color[i] == joueur:
+							peut = False
+				if peut == True:
+					g.setColor(s, joueur)
+
 			affichePlateau(fenetre, g, joueur, chaine)
 			if testGagne(g, joueur):
 				continuer = 1
 			else:
-				chaine = joueur + "    a perdu!!!!!"
 				if joueur == "red":
 					joueur = "yellow"
 				else:
 					joueur = "red"
+				chaine = joueur + " a perdu!!!!!"
 				if testGagne(g, joueur):
 					chaine = " MATCH NUL!!"
 
@@ -61,19 +63,15 @@ while continuer:
 				joueur = "yellow"
 			else:
 				joueur = "red"
-
-
 continuer = 1
-while continuer:
 
-	fenetre.fill((0,0,0))
+while continuer:
+	fenetre.fill((102, 101, 67))
 	affichePlateau(fenetre, g, joueur, chaine)
 	for event in pygame.event.get():       #pygame.event.get():
 		if event.type == QUIT:
 			continuer = 0
 	#else:
-
-
 
 pygame.quit()
 exit()

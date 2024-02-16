@@ -1,3 +1,4 @@
+import pygame
 """
 	Graphe représenté par une matrice d'adjacence
 """
@@ -10,12 +11,12 @@ class Graphe:
 	 	et les couleurs des sommets dans une liste.
 	"""
 
-
 	def __init__(self,n):
 		self.n = n
 		self.adj = [[False] * n for i in range(n)]
-		self.pos = []
+		self.pos = [(200,100),(600,100),(300,200),(500,200),(300,400),(500,400),(200,500),(600,500)]
 		self.color = ["white" for i in range(n)]
+		self.circrect = [pygame.Rect(self.pos[i][0] - 20, self.pos[i][1] - 20, 41, 41) for i in range(n)]
 
 	def __str__(self):
 		return str(self.adj)
@@ -26,16 +27,10 @@ class Graphe:
 
 	def position(self,n):
 		if n == 8:
-			return [(200,100),(600,100),(300,200),(500,200),(300,400),(500,400),(200,500),(600,500)]
+			return
 		else:
 			print("positions non définies dans graphs.py")
 			return []
-
-	def ajouterPos(self):
-		""" Fait appel à la méthode position qui pour l'instant ne prend qu'un graphe de type
-			prisme à base cubique
-		"""
-		self.pos = self.position(self.n)
 
 	def getPos(self,s):
 		return self.pos[s]
@@ -43,7 +38,7 @@ class Graphe:
 	def getColor(self,s):
 		return self.color[s]
 
-	def setColor(self,s, couleur):
+	def setColor(self,s,couleur):
 		self.color[s] = couleur
 
 	def getArc(self, s1, s2):
@@ -92,7 +87,6 @@ if __name__ == "__main__":
 
 	print("degre: ", g.getDegre(0))
 	print("nbArcs ", g.nbArcs())
-	g.ajouterPos()
 	for ligne in g.adj:
 		print(ligne)
 	print(g.pos)

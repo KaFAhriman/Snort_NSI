@@ -1,4 +1,5 @@
-from graphs import Graphe
+from Graphe import Graphe
+import pygame
 
 def selectionSommet(x, y ,g, joueur):
 	"""
@@ -6,15 +7,10 @@ def selectionSommet(x, y ,g, joueur):
 		sortie: renvoie le numéro du sommet, si on a bien cliqué et que le sommet est toujours blanc
 			et -1 sinon
 	"""
-	print("a completer")
-
-def sommetValide(i, g,  joueur):
-	"""
-		Entrée: le numéro du sommet, le graphe , le joueur (sa couleur)
-		Sortie: si le sommet selectionné vaut -1, ou que le sommet est déjà colorié, renvoie False,
-			sinon, colorie le sommet et renvoie True
-	"""
-	print("a completer")
+	for i in range(8):
+		if g.circrect[i].collidepoint(x,y) == True and (g.color[i] == "white"):
+			return i
+	return -1
 
 def testGagne(g, joueur):
 	"""
@@ -25,4 +21,9 @@ def testGagne(g, joueur):
 			sinon ce sommet n'est pas jouable
 		renvoie True si il reste un sommet jouable pour joueur, et False sinon
 	"""
-	print("a completer")
+	for i in range(8):
+		if g.color[i] == "white":
+			for j in g.adj[i]:
+				if j == True:
+					return True
+	return False
