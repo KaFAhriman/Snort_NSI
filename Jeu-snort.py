@@ -33,9 +33,7 @@ while continuer:
 			(x,y) = event.pos
 			#print(x,y)
 			s = selectionSommet(x, y, g, joueur)
-			if s == -1:
-				break
-			else:
+			if s!=-1:
 				peut = True
 				for i in range(8):
 					if g.adj[s][i] == True :
@@ -43,7 +41,8 @@ while continuer:
 							peut = False
 				if peut == True:
 					g.setColor(s, joueur)
-
+				elif peut == False:
+					break
 			affichePlateau(fenetre, g, joueur, chaine)
 			if testGagne(g, joueur):
 				continuer = 1
