@@ -53,7 +53,7 @@ while continuer:
 					joueur = "red"
 				chaine = joueur + " a perdu!!!!!"
 				if testGagne(g, joueur):
-					chaine = " MATCH NUL!!"
+					chaine = " MATCH NUL!"
 
 				#print("perdu")
 				continuer = 0
