@@ -22,8 +22,10 @@ def testGagne(g, joueur):
 		renvoie True si il reste un sommet jouable pour joueur, et False sinon
 	"""
 	for i in range(8):
-		if g.color[i] == "white":
-			for j in g.adj[i]:
-				if j == True:
-					return True
-	return False
+		if g.color[i] == 'white':
+			v = g.getVoisins(i)
+			f = []
+			for j in range(len(v)):
+				if g.color[j] == joueur:
+					return False
+	return True

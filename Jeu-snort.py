@@ -41,8 +41,8 @@ while continuer:
 							peut = False
 				if peut == True:
 					g.setColor(s, joueur)
-				elif peut == False:
-					break
+			if s == -1 or peut == False:
+				break
 			affichePlateau(fenetre, g, joueur, chaine)
 			if testGagne(g, joueur):
 				continuer = 1
