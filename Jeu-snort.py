@@ -35,7 +35,7 @@ while continuer:
 			s = selectionSommet(x, y, g, joueur)
 			if s!=-1:
 				peut = True
-				for i in range(8):
+				for i in range(g.n):
 					if g.adj[s][i] == True :
 						if g.color[i] == joueur:
 							peut = False
