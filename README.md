@@ -30,6 +30,6 @@ Pour cela nous parcourons l'ensemble des sommets à l'aide d'une boucle *for*, a
 
 Il aurait été possible d'ajouter d'autre graphes afin de rendre le jeu plus intéressant pour les joueurs, celui-ci est en effet relativement simple.
 
-### Collisions
+### Collisions
 
 Notre manière de détecter des collisions entre la souris et le sommet est fonctionnelle en l'état mais pas optimale : il est possible (bien que peu probable) que le joueur clique dans le rectangle sans cliquer sur le cercle, le rectangle étant plus grand que ce cercle.
