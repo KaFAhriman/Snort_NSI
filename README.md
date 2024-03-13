@@ -22,7 +22,13 @@ Pour détecter si la souris entre en collision avec le cercle représentant le s
 
 La fonction *testGagne()* vérifie si il reste un sommet jouable pour le joueur dont la couleur a été passée en argument.
 
-Pour cela nous parcourons l'ensemble des sommets à l'aide d'une boucle *for*, ainsi si le sommet de rang *i* est blanc, nous créons une liste *v* enregistrant chacun des voisins de la couleur du joueur. Pour enregistrer ces voisins nous parcourons à nouveau l'ensemble des sommets, nous vérifions ensuite si il existe un arc entre le sommet *i* et le sommet *j* à l'aide de la matrice d'adjacence. Si cet arc existe et que le sommet *j* est de la couleur de joueur alors nous l'ajoutons à notre liste *v*
+Pour cela nous parcourons l'ensemble des sommets à l'aide d'une boucle *for*, ainsi si le sommet de rang *i* est blanc, nous créons une liste *v* enregistrant chacun des voisins de la couleur du joueur. Pour enregistrer ces voisins nous parcourons à nouveau l'ensemble des sommets, nous vérifions ensuite si il existe un arc entre le sommet *i* et le sommet *j* à l'aide de la matrice d'adjacence. Si cet arc existe et que le sommet *j* est de la couleur de joueur alors nous l'ajoutons à notre liste *v*. Après avoir parcouru la liste des sommets, si la liste v est vide, c'est que le sommet de rang *i* ne possède aucun voisin de la même couleur nous retournons donc *True*. Sinon la fonction renverra *False* dans tout les cas.
+
+### La fonction sommetValide():
+
+Cette fonction fut jugée superflue et embarrassante par l'ensemble du groupe, son contenu fut donc passée dans le fichier *Jeu-snort.py*. Elle servait originellement à déterminer si un joueur pouvait colorier un sommet.
+
+Ainsi nous regardons parmi tout les sommets voisins du sommet sélectionné si il en existe un de la même couleur. Si oui alors le sommet n'est pas jouable et nous laissons le joueur en choisir un nouveau, sinon nous affectons au sommet la couleur du joueur et passons au joueur suivant. 
 
 ## 3) Améliorations possibles
 
