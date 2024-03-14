@@ -16,7 +16,7 @@ Pour cela les fonctions dans le fichier **moteur.py** doivent être complétées
 
 La fonction *selectionSommet()* a comme but de vérifier si les coordonnées (x, y) de la souris entrent en collision avec un sommet, si c'est nous vérifions si le sommet est déjà sélectionné ou non. Dans ce cas là la fonction retournera le numéro du sommet, autrement elle devra renvoyer -1.
 
-Pour détecter si la souris entre en collision avec le cercle représentant le sommet à l'écran, nous avons donc ajouter un nouvel attribut à la classe *Graphe*: la liste *circrect*. Cette liste contient un rectangle pour chaque sommet, ainsi nous pourrons détecter les collisions avec ces rectangles et
+Pour détecter si la souris entre en collision avec le cercle représentant le sommet à l'écran, nous avons donc ajouter un nouvel attribut à la classe *Graphe*: la liste *circrect*. Cette liste contient un rectangle pour chaque sommet, ainsi nous pourrons détecter les collisions avec ces rectangles.
 
 ### La fonction *testGagne()*:
 
